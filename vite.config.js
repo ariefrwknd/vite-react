@@ -2,6 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
+const input = process.argv[4]?.split('=')?.[1];
+if (input) {
+    console.log('SINGLE INPUT PROVIDED: ' + input);
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	// base: "/",	
@@ -46,7 +51,15 @@ export default defineConfig({
 	build: {
     target: "esnext",
 		commonjsOptions: {
-			transformMixedEsModules: true,
+      transformMixedEsModules: true,
 		},
+    emptyOutDir: false,
+    // rollupOptions: {
+    //     input: input || ['main.js', 'test.js'],
+    //     output: {
+    //         [input ? 'inlineDynamicImports' : 'dummy']: true,
+    //         entryFileNames: input || ['main.js', 'test.js']
+    //     }
+    // },
 	},
 });
