@@ -13,7 +13,7 @@
     "@vitejs/plugin-legacy": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vite-plugin-pwa": "^0.16.7"
+    "vite-plugin-pwa": "^0.16.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.18",
