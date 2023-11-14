@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
@@ -59,13 +58,5 @@ export default defineConfig({
 		commonjsOptions: {
       transformMixedEsModules: true,
 		},
-    emptyOutDir: false,
-    // rollupOptions: {
-    //     input: input || ['main.js', 'test.js'],
-    //     output: {
-    //         [input ? 'inlineDynamicImports' : 'dummy']: true,
-    //         entryFileNames: input || ['main.js', 'test.js']
-    //     }
-    // },
 	},
 });
