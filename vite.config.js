@@ -3,10 +3,10 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import legacy from '@vitejs/plugin-legacy'
 
-const input = process.argv[4]?.split('=')?.[1];
-if (input) {
-    console.log('SINGLE INPUT PROVIDED: ' + input);
-}
+// const input = process.argv[4]?.split('=')?.[1];
+// if (input) {
+//     console.log('SINGLE INPUT PROVIDED: ' + input);
+// }
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -49,11 +49,12 @@ export default defineConfig({
 			},
 		}),
     legacy({
-      targets: ['defaults', 'not IE 11'],
+      targets: ['>0.3%, not dead', 'not IE 11'],
       renderLegacyChunks: false,
     }),
 	],
 	build: {
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87' , 'safari14'],
 		commonjsOptions: {
       transformMixedEsModules: true,
 		},
