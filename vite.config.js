@@ -1,16 +1,10 @@
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
-import react from '@vitejs/plugin-react'
-import legacy from '@vitejs/plugin-legacy'
-
-// const input = process.argv[4]?.split('=')?.[1];
-// if (input) {
-//     console.log('SINGLE INPUT PROVIDED: ' + input);
-// }
+import react from "@vitejs/plugin-react";
+import legacy from "@vitejs/plugin-legacy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	// base: "/",	
 	plugins: [
 		react(),
 		VitePWA({
@@ -44,19 +38,18 @@ export default defineConfig({
 					},
 				],
 				push: {
-					"icon": "/logo.png"
-				}
+					icon: "/logo.png",
+				},
 			},
 		}),
-    legacy({
-      targets: ['>0.3%, not dead', 'not IE 11'],
-      // renderLegacyChunks: false,
-    }),
+		legacy({
+			targets: [">0.3%, not dead", "not IE 11"],
+		}),
 	],
 	build: {
-    target: ['es2020', 'edge88', 'firefox78', 'chrome87' , 'safari14'],
+		target: ["es2020", "edge88", "firefox78", "chrome87", "safari14"],
 		commonjsOptions: {
-      transformMixedEsModules: true,
+			transformMixedEsModules: true,
 		},
 	},
 });
