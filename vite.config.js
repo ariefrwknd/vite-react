@@ -50,7 +50,7 @@ export default defineConfig({
 		}),
     legacy({
       targets: ['>0.3%, not dead', 'not IE 11'],
-      renderLegacyChunks: false,
+      // renderLegacyChunks: false,
     }),
 	],
 	build: {
