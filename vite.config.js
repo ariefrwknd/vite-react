@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+import legacy from '@vitejs/plugin-legacy'
 
 const input = process.argv[4]?.split('=')?.[1];
 if (input) {
@@ -47,9 +48,12 @@ export default defineConfig({
 				}
 			},
 		}),
+    legacy({
+      targets: ['defaults', 'not IE 11'],
+      renderLegacyChunks: false,
+    }),
 	],
 	build: {
-    target: "esnext",
 		commonjsOptions: {
       transformMixedEsModules: true,
 		},
