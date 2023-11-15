@@ -71,14 +71,9 @@ export default defineConfig({
 			},
 		}),
 		legacy({
-			targets: ["defaults", "not ie <= 8"],
-			polyfills: [
-				"es.promise.finally",
-				"es.array.iterator",
-				"es/map",
-				"es/set",
-			],
-			modernPolyfills: ["es.promise.finally", "es.array.iterator"],
+			targets: ["ie >= 11"],
+      			additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+      			polyfills: ["es.array.iterator"],
 		}),
 	],
 	build: {
