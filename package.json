@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build-vite": "GENERATE_SOURCEMAP=false vite build",
-    "build": "CI=false yarn build && yarn copy-to-deploy && yarn compress-image",
+    "build": "CI=false npm run build && npm run copy-to-deploy && npm run compress-image",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "format": "prettier --write src",
     "copy-to-deploy": "cpx 'dist/**/*' build_deploy -C",
     "compress-image": "node addons/compress-image.mjs",
     "convert-image": "node addons/convert-image.mjs",
-    "build-server": "CI=false yarn build && yarn copy-to-deploy && yarn compress-image"
+    "build-server": "CI=false npm run build && npm run copy-to-deploy && npm run compress-image"
   },
   "dependencies": {
     "@apicase/adapter-fetch": "^0.15.1",
