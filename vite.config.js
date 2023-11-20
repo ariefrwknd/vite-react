@@ -59,4 +59,5 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
+  include: ["vite-plugin-pwa"],
 });
