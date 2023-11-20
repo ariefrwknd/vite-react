@@ -7,8 +7,21 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      // registerType: "autoUpdate",
-      strategies: "injectManifest",
+      registerType: "prompt",
+      injectManifest: {
+        globDirectory: "dist/",
+        globPatterns: ["**/*.{json,ico,svg,ttf,woff,css,js,html,txt,jpg,png,woff2,mjs}"],
+        swDest: "dist/sw.js",
+        swSrc: "sw.js",
+        maximumFileSizeToCacheInBytes: 50000000,
+      },
+      workbox: {
+        importScripts: ["sw.js"],
+      },
+      devOptions: {
+        enabled: true,
+        /* other options */
+      },
       srcDir: "src",
       filename: "sw.js",
       // selfDestroying: true,
