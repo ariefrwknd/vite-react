@@ -1,15 +1,13 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-      </div>
       <h1>legacy Target</h1>
       <h1>legacy chunks: false</h1>
       <div className="card">
