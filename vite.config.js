@@ -47,7 +47,8 @@ export default defineConfig({
       // for ie11
       targets: ["ie >= 11"],
       additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
-      polyfills: ["es.array.iterator"],
+      polyfills: ["es.array.iterator", "es.promise.finally", "es/map", "es/set"],
+      modernPolyfills: ["es.promise.finally"],
     }),
     // legacy({
     // 	targets: [">0.3%, not dead", "not IE 11"],
