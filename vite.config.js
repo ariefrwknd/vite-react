@@ -1,27 +1,15 @@
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import react from "@vitejs/plugin-react";
+import legacy from "@vitejs/plugin-legacy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "prompt",
-      injectManifest: {
-        globDirectory: "dist/",
-        globPatterns: ["**/*.{json,ico,svg,ttf,woff,css,js,html,txt,jpg,png,woff2,mjs}"],
-        swDest: "dist/sw.js",
-        swSrc: "sw.js",
-        maximumFileSizeToCacheInBytes: 50000000,
-      },
-      workbox: {
-        importScripts: ["sw.js"],
-      },
-      devOptions: {
-        enabled: true,
-        /* other options */
-      },
+      registerType: "autoUpdate",
+      strategies: "injectManifest",
       srcDir: "src",
       filename: "sw.js",
       // selfDestroying: true,
@@ -53,6 +41,12 @@ export default defineConfig({
           icon: "/logo.png",
         },
       },
+    }),
+    legacy({
+      // for ie11
+      targets: ["ie >= 11"],
+      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+      polyfills: ["es.array.iterator"],
     }),
     // legacy({
     // 	targets: [">0.3%, not dead", "not IE 11"],
