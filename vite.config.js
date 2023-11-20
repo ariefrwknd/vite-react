@@ -13,6 +13,10 @@ export default defineConfig({
       srcDir: "src",
       filename: "sw.js",
       // selfDestroying: true,
+      devOptions: {
+        enabled: true,
+        type: "module",
+      },
       manifest: {
         name: "Ayo Qoncierge",
         short_name: "qoncierge",
