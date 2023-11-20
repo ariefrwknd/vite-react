@@ -16,6 +16,7 @@ export default defineConfig({
       manifest: {
         name: "Ayo Qoncierge",
         short_name: "qoncierge",
+        description: "Ayo Qoncierge Application",
         theme_color: "#ffffff",
         start_url: "/",
         display: "standalone",
