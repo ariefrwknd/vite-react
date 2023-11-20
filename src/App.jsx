@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 
 function App() {
   const [count, setCount] = useState(0);
