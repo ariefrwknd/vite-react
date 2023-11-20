@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build-vite": "GENERATE_SOURCEMAP=false vite build",
-    "build": "CI=false npm run build && npm run copy-to-deploy && npm run compress-image",
+    "build": "CI=false npm run build-vite && npm run copy-to-deploy && npm run compress-image",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "format": "prettier --write src",
