@@ -59,5 +59,5 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-  include: ["vite-plugin-pwa"],
+  include: ["vite-plugin-pwa, virtual:pwa-register"],
 });
